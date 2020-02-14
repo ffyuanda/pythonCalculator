@@ -1,4 +1,4 @@
-# Basic Animation Framework
+from View import *
 
 from tkinter import *
 
@@ -10,7 +10,7 @@ def init(data):
     # load data.xyz as appropriate
     data.width = 400
     data.height = 500
-    data.margin = 20
+    data.margin = 0
 
     # display area's config
     data.displayWidth = data.width
@@ -21,8 +21,14 @@ def init(data):
     # control area's row and column
     data.controlRow = 4
     data.controlCol = 4
-
-
+    data.cellWidth = data.width / data.controlCol
+    data.cellHeight = (data.height - data.displayHeight) / data.controlRow
+    data.cellColor = 'white'
+    data.signs = [[7, 8, 9, 'x'],
+                  [4, 5, 6, '-'],
+                  [1, 2, 3, '+'],
+                  ["+/-", 0, '.', '=']
+                  ]
 
 
     pass
@@ -40,9 +46,8 @@ def timerFired(data):
 
 def redrawAll(canvas, data):
     # draw in canvas
-    canvas.create_rectangle(data.margin, data.margin, data.displayWidth -
-                            data.margin, data.margin + data.displayHeight,
-                            fill = data.displayColor, width = data.borderWidth)
+    drawDisplayPanel(canvas, data)
+    drawControlPanel(canvas, data)
     pass
 
 ####################################
