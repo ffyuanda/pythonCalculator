@@ -8,7 +8,9 @@ def controlPanelClick(event, data):
     col = (event.x - data.margin) // data.cellWidth
     row = int(row)
     col = int(col)
+    # print(data.currNum, data.signs[row][col])
 
-    print(data.signs[row][col])
+    data.currNum += data.signs[row][col]
+    print(data.currNum)
 
     pass

@@ -24,11 +24,13 @@ def init(data):
     data.cellWidth = data.width / data.controlCol
     data.cellHeight = (data.height - data.displayHeight) / data.controlRow
     data.cellColor = 'grey'
-    data.signs = [[7, 8, 9, 'x'],
-                  [4, 5, 6, '-'],
-                  [1, 2, 3, '+'],
-                  ["+/-", 0, '.', '=']
+    data.signs = [['7', '8', '9', 'x'],
+                  ['4', '5', '6', '-'],
+                  ['1', '2', '3', '+'],
+                  ["+/-", '0', '.', '=']
                   ]
+    data.currNum = ""
+    data.numWidth = 11
 
 
     pass
@@ -52,6 +54,7 @@ def redrawAll(canvas, data):
     # draw in canvas
     drawDisplayPanel(canvas, data)
     drawControlPanel(canvas, data)
+    drawNumbers(canvas, data)
     pass
 
 ####################################

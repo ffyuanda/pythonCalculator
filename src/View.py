@@ -5,6 +5,8 @@ def drawDisplayPanel(canvas, data):
     canvas.create_rectangle(data.margin, data.margin, data.displayWidth -
                             data.margin, data.margin + data.displayHeight,
                             fill=data.displayColor, width=data.borderWidth)
+
+    # canvas.create_text()
     pass
 
 
@@ -31,4 +33,15 @@ def drawControlPanel(canvas, data):
         for j in range(data.controlCol):
 
             drawCell(canvas, data, i, j)
+    pass
+
+
+def drawNumbers(canvas, data):
+
+    canvas.create_text(data.displayWidth - data.numWidth
+                       * len(data.currNum) - 4,
+                       data.displayHeight - data.numWidth - 10,
+                       text=data.currNum, fill='white',
+                       font="Times 32 bold")
+
     pass
