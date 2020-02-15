@@ -1,3 +1,5 @@
+
+
 def drawDisplayPanel(canvas, data):
 
     canvas.create_rectangle(data.margin, data.margin, data.displayWidth -
@@ -13,11 +15,11 @@ def drawCell(canvas, data, row, col):
     x1 = (col + 1) * data.cellWidth + data.margin
     y1 = (row + 1) * data.cellHeight + data.margin + data.displayHeight
 
-    canvas.create_rectangle(x0, y0, x1, y1, fill = data.cellColor, width = 2)
+    canvas.create_rectangle(x0, y0, x1, y1, fill=data.cellColor, width=2)
 
     canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2,
                        text=data.signs[row][col],
-                       fill="black",
+                       fill="white",
                        font="Times 30 bold")
 
     pass

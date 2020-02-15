@@ -1,5 +1,5 @@
 from View import *
-
+from Control import *
 from tkinter import *
 
 ####################################
@@ -15,7 +15,7 @@ def init(data):
     # display area's config
     data.displayWidth = data.width
     data.displayHeight = 120
-    data.displayColor = "blue"
+    data.displayColor = "grey"
     data.borderWidth = 3
 
     # control area's row and column
@@ -23,7 +23,7 @@ def init(data):
     data.controlCol = 4
     data.cellWidth = data.width / data.controlCol
     data.cellHeight = (data.height - data.displayHeight) / data.controlRow
-    data.cellColor = 'white'
+    data.cellColor = 'grey'
     data.signs = [[7, 8, 9, 'x'],
                   [4, 5, 6, '-'],
                   [1, 2, 3, '+'],
@@ -33,8 +33,12 @@ def init(data):
 
     pass
 
+
 def mousePressed(event, data):
     # use event.x and event.y
+    controlPanelClick(event, data)
+
+
     pass
 
 def keyPressed(event, data):
